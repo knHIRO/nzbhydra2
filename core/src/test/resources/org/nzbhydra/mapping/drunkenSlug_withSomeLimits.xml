@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  (C) Copyright 2017 TheOtherP (theotherp@posteo.net)
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  -->
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:newznab="http://www.newznab.com/DTD/2010/feeds/attributes/" encoding="utf-8">
+    <channel>
+        <atom:link href="https://drunkenslug.com/api" rel="self" type="application/rss+xml"/>
+        <title>DS</title>
+        <description>DS API Details</description>
+        <link>https://drunkenslug.com/</link>
+        <language>en-gb</language>
+        <webMaster>ds@drunkenslug.com DS</webMaster>
+        <category>drunkenslug, usenet indexer, nzb, search nzb, newznab, nzedb, newsgroups, giganews, astraweb, sabnzbd, sonarr, nzbget, usenet, search usenet&#13;
+        </category>
+        <generator>nZEDb</generator>
+        <ttl>10</ttl>
+        <docs>https://drunkenslug.com/apihelp/</docs>
+        <image url="https://drunkenslug.com/themes/shared/img/logo.png" title="DS" link="https://drunkenslug.com/" description="Visit DS - DrunkenSlug"/>
+        <newznab:response offset="0" total="7800"/>
+        <newznab:apilimits apiCurrent="44" apiMax="50" grabMax="5"/>
+
+    </channel>
+</rss>
