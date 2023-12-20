@@ -1,0 +1,13 @@
+[ {
+  "showForVersion" : "2.3.13",
+  "newsAsMarkdown" : "<p>news3.0.0</p>\n"
+}, {
+  "showForVersion" : "2.0.0",
+  "newsAsMarkdown" : "<p>news2.0.0</p>\n"
+}, {
+  "showForVersion" : "1.0.0",
+  "newsAsMarkdown" : "<p>news1.0.0</p>\n"
+}, {
+  "showForVersion" : "0.0.5-SNAPSHOT",
+  "newsAsMarkdown" : "<p>news0.0.5-SNAPSHOT </p>\n"
+} ]
