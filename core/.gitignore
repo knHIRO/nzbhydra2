@@ -1,0 +1,26 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.idea/*
+*.iws
+*.ipr
+/bower_components
+/node_modules
+/nzbhydra.db.*
+*.pid
+/logs
+/config
+/database/
+*.log
+*.db.*
+/data
+nzbhydra.yml
+sql notes.sql
+/static
+/cacerts
+/nzbhydra2wrapper.py
+/nzbhydra2wrapperPy3.py
+/logback-access.xml
+*.dmp
+*.trc
+package-lock.json
+afile.txt
