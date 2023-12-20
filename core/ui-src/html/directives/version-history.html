@@ -1,0 +1,35 @@
+<!--
+  ~  (C) Copyright 2017 TheOtherP (theotherp@posteo.net)
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License.
+  -->
+
+<div class="row">
+  <div class="panel panel-default " style="margin-top: 50px; text-align: left">
+    <div class="panel-heading"><h3>Version history</h3></div>
+    <div class="list-group">
+      <li ng-repeat="entry in versionHistory" class="list-group-item"
+          style="padding-top: 20px; padding-bottom: 20px;">
+        <h3 style="margin-top: 0">{{::entry.version}}<span ng-if="!entry.final"> Beta</span> ({{::entry.date}})</h3>
+        <div ng-repeat="change in entry.changes" style="margin-bottom: 5px">
+                <span ng-switch="change.type" style="margin-right: 5px">
+                    <span class="label label-primary" ng-switch-when="note">Note</span>
+                    <span class="label label-warning" ng-switch-when="fix">Fix</span>
+                    <span class="label label-success" ng-switch-when="feature">Feature</span>
+                </span>
+          <span ng-bind-html="change.text  | unsafe"></span>
+        </div>
+      </li>
+    </div>
+  </div>
+</div>
