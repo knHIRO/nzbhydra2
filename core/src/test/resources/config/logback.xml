@@ -1,0 +1,49 @@
+<configuration>
+
+
+    <conversionRule conversionWord="clr" converterClass="org.nzbhydra.logging.ColorConverter"/>
+    <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+    <conversionRule conversionWord="mdc" converterClass="org.nzbhydra.logging.MdcLogConverter"/>
+
+    <property name="CONSOLE_LOG_PATTERN"
+              value="-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %clr(%mdc){magenta}%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx{15}}"/>
+    <property name="FILE_LOG_PATTERN"
+              value="-%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} --- [%15.15t] %-40.40logger{39} : %mdc%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="org.nzbhydra.logging.SensitiveDataRemovingPatternLayoutEncoder">
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder class="org.nzbhydra.logging.SensitiveDataRemovingPatternLayoutEncoder">
+            <pattern>DEBUG</pattern>
+        </encoder>
+        <file>logs/nzbhydra2.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/logs/nzbhydra2.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>1</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+
+    <logger name="org.nzbhydra" level="DEBUG">
+    </logger>
+    <logger name="org.spring" level="WARN"/>
+    <logger name="org.hibernate" level="WARN"/>
+    <logger name="org.apache" level="WARN"/>
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.thymeleaf" level="WARN"/>
+    <logger name="org.eclipse" level="WARN"/>
+    <logger name="okhttp3.OkHttpClient" level="DEBUG"/>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
